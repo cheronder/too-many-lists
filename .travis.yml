@@ -11,7 +11,7 @@ before_install:
   -in travis.key.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 install:
-- "(test -x $HOME/.cargo/bin/mdbook || cargo install mdbook --vers 0.3.0 --force)"
+- "(test -x $HOME/.cargo/bin/mdbook || cargo install mdbook --vers 0.4.0 --force)"
 script:
 - mdbook build
 - rsync -azv -delete -e 'ssh' book/ vps@cheronder.com:/var/www/static/too-many-lists
