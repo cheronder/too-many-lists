@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,22 +7,36 @@
         
         <meta name="robots" content="noindex" />
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
         <link rel="shortcut icon" href="favicon.png">
+        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
         <link rel="stylesheet" href="css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -34,11 +48,11 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,8 +76,11 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -80,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li><a href="first.html"><strong aria-hidden="true">2.</strong> 差的栈实现</a></li><li><ol class="section"><li><a href="first-layout.html"><strong aria-hidden="true">2.1.</strong> 内存布局</a></li><li><a href="first-new.html"><strong aria-hidden="true">2.2.</strong> New 方法</a></li><li><a href="first-ownership.html"><strong aria-hidden="true">2.3.</strong> 所有权初探</a></li><li><a href="first-push.html"><strong aria-hidden="true">2.4.</strong> Push 方法</a></li><li><a href="first-pop.html"><strong aria-hidden="true">2.5.</strong> Pop 方法</a></li><li><a href="first-test.html"><strong aria-hidden="true">2.6.</strong> 单元测试</a></li><li><a href="first-drop.html"><strong aria-hidden="true">2.7.</strong> Drop 方法</a></li><li><a href="first-final.html"><strong aria-hidden="true">2.8.</strong> 最终代码</a></li></ol></li><li><a href="second.html"><strong aria-hidden="true">3.</strong> 好的栈实现</a></li><li><a href="third.html"><strong aria-hidden="true">4.</strong> 可持久化的栈实现</a></li><li><a href="fourth.html"><strong aria-hidden="true">5.</strong> 差的双端队列实现</a></li><li><a href="fifth.html"><strong aria-hidden="true">6.</strong> 不安全的队列实现</a></li><li><a href="sixth.html"><strong aria-hidden="true">7.</strong> 又好又安全的双端队列实现</a></li><li><a href="infinity.html"><strong aria-hidden="true">8.</strong> 一些有问题的链表实现</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="ch00-00-preface.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded "><a href="ch01-00.html"><strong aria-hidden="true">2.</strong> 差的栈实现</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-layout.html"><strong aria-hidden="true">2.1.</strong> 内存布局</a></li><li class="chapter-item expanded "><a href="ch01-02-new.html"><strong aria-hidden="true">2.2.</strong> New 方法</a></li><li class="chapter-item expanded "><a href="ch01-03-ownership.html"><strong aria-hidden="true">2.3.</strong> 所有权初探</a></li><li class="chapter-item expanded "><a href="ch01-04-push.html"><strong aria-hidden="true">2.4.</strong> Push 方法</a></li><li class="chapter-item expanded "><a href="ch01-05-pop.html"><strong aria-hidden="true">2.5.</strong> Pop 方法</a></li><li class="chapter-item expanded "><a href="ch01-06-test.html"><strong aria-hidden="true">2.6.</strong> 单元测试</a></li><li class="chapter-item expanded "><a href="ch01-07-drop.html"><strong aria-hidden="true">2.7.</strong> Drop 方法</a></li><li class="chapter-item expanded "><a href="ch01-08-final.html"><strong aria-hidden="true">2.8.</strong> 最终代码</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00.html"><strong aria-hidden="true">3.</strong> 好的栈实现</a></li><li class="chapter-item expanded "><a href="ch03-00.html"><strong aria-hidden="true">4.</strong> 可持久化的栈实现</a></li><li class="chapter-item expanded "><a href="ch04-00.html"><strong aria-hidden="true">5.</strong> 差的双端队列实现</a></li><li class="chapter-item expanded "><a href="ch05-00.html"><strong aria-hidden="true">6.</strong> 不安全的队列实现</a></li><li class="chapter-item expanded "><a href="ch06-00.html"><strong aria-hidden="true">7.</strong> 又好又安全的双端队列实现</a></li><li class="chapter-item expanded "><a href="ch99-00.html"><strong aria-hidden="true">8.</strong> 一些有问题的链表实现</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -89,37 +106,38 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title"></h1>
+                    <h1 class="menu-title"></h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
                     </div>
                 </div>
 
@@ -168,13 +186,13 @@
 <p>在 Rust 中写链表的确很麻烦，必须要熟悉上述概念才能写出。</p>
 <p>本书所有内容都可在侧边栏中查看（移动端可能崩溃）。方便起见，这里也列出大纲以供参考：</p>
 <ol>
-<li><a href="first.html">差的栈实现（基于单向链表）</a></li>
-<li><a href="second.html">好的栈实现（基于单向链表）</a></li>
-<li><a href="third.html">可持久化的栈实现（基于单向链表）</a></li>
-<li><a href="fourth.html">差的双端队列实现（基于双向链表）</a></li>
-<li><a href="fifth.html">不安全的队列实现（基于单向链表）</a></li>
-<li><a href="sixth.html">未完待续：又好又安全的双端队列实现（基于双向链表）</a></li>
-<li><a href="infinity.html">附加：一些有问题的链表实现</a></li>
+<li><a href="ch01-00.html">差的栈实现（基于单向链表）</a></li>
+<li><a href="ch02-00.html">好的栈实现（基于单向链表）</a></li>
+<li><a href="ch03-00.html">可持久化的栈实现（基于单向链表）</a></li>
+<li><a href="ch04-00.html">差的双端队列实现（基于双向链表）</a></li>
+<li><a href="ch05-00.html">不安全的队列实现（基于单向链表）</a></li>
+<li><a href="ch06-00.html">未完待续：又好又安全的双端队列实现（基于双向链表）</a></li>
+<li><a href="ch99-00.html">附加：一些有问题的链表实现</a></li>
 </ol>
 <p>本书中，我会写出所有输入到终端的命令。也会用到 Cargo 包管理器来开发项目。它不是写 Rust 所必需的，但相较于直接用 rustc 编译器直接开发，用它还是会<strong>方便得多</strong>。另外，如果你只是想随便试试，可以用浏览器访问 <a href="https://play.rust-lang.org/">play.rust-lang.org</a>，来运行一些简单的程序。</p>
 <p>让我们开始吧！首先创建项目：</p>
@@ -202,7 +220,7 @@ $ cd lists
 <p>但在真正写 Rust 程序时，这些情况都是很<strong>罕见</strong>的。99% 的可能是你只需要用到 <code>Vec</code>（基于数组的栈）的功能，剩下1%可能会用到 <code>VecDeque</code>（基于数组的双端队列）。由于它们的内存分配频率低、内存额外开销低，并且具有空间局部性以及真正的随机访问能力，在面对一般的负载时，这些结构表现得更为优越。</p>
 <p>就像字典树（Trie）一样，链表是一种很<strong>特化</strong>、很<strong>小众</strong>的数据结构。我说字典树小众，很少会有人反驳。因为对于一个普通程序员而言，在整个职业生涯中都几乎不会去学它。然而链表却好像有着某种奇怪的特殊地位，每个本科生都学过怎么写链表。这在标准集合库（std::collections）中是唯一的，即 <a href="https://doc.rust-lang.org/std/collections/struct.LinkedList.html">LinkedList 集合</a>，在 C++ 标准库中则是 <a href="http://en.cppreference.com/w/cpp/container/list">list 容器</a>。</p>
 <p>从社区的角度，我们应当<strong>反对</strong>将链表视为「标准」的数据结构。它确实是个不错的结构，在某些特定而非通用情况下可堪大用。</p>
-<p>有的人读了广告第一段就不读了，然后用接下来的用途列表中的一项作为论据反驳我的观点。我可以贴出我和他们论战的网址。但如果你只是想学点 Rust，随时可以跳到<a href="first.html">第一章</a>。</p>
+<p>有的人读了广告第一段就不读了，然后用接下来的用途列表中的一项作为论据反驳我的观点。我可以贴出我和他们论战的网址。但如果你只是想学点 Rust，随时可以跳到<a href="ch01-00.html">第一章</a>。</p>
 <h2><a class="header" href="#性能不是一切" id="性能不是一切">性能不是一切</a></h2>
 <p>无论程序是 I/O 密集型的，还是在藏在偏僻的角落里无足轻重，都不足以成为用链表的理由。你可以用任何数据结构，为什偏要用链表呢？用链式哈希表（linked hash map）！</p>
 <p>如果没有性能要求，最自然的选择是使用基于数组的结构。</p>
@@ -244,7 +262,7 @@ $ cd lists
 <p>是的，本书正是以此为前提的。具体来说，单向链表非常简单。而对于双向链表来说，我们将会看到，学起来就更加刺激一些。</p>
 <h2><a class="header" href="#休息一下" id="休息一下">休息一下</a></h2>
 <p>写到这里，有点跑题了，快开始编写我们的链表库吧。</p>
-<p><a href="first.html">进入第一章!</a></p>
+<p><a href="ch01-00.html">进入第一章!</a></p>
 <blockquote>
 <p><strong>译注</strong>： 脚注为译者所注，主要补充原文中没有讲明白的细节。</p>
 </blockquote>
@@ -275,12 +293,12 @@ $ cd lists
 <p>原文链接：<a href="https://github.com/rust-unofficial/too-many-lists/blob/master/src/first-layout.md">first-layout.md</a> <br>
 翻译基准：<a href="https://github.com/rust-unofficial/too-many-lists/blob/0f4c26bfe58f81d3667eb214398a3cf99f66a7f2/src/first-layout.md">commit 0f4c26b</a></p>
 </blockquote>
-<p>那么，什么是链表呢？说的简单一点，就是堆上的一系列数据，按顺序指向别的数据形成的结构。对使用过程式语言的程序员来说，链表是个大坑。不过函数式教徒却觉得用它可以构造一切。你要是问他们链表是什么，他们可能会给你如下的定义：</p>
+<p>那么，什么是链表呢？说得简单一点，就是堆上的一系列数据，按顺序指向别的数据形成的结构。对使用过程式语言的程序员来说，链表是个大坑。不过函数式教徒却觉得用它可以构造一切。你要是问他们链表是什么，他们可能会给你如下的定义：</p>
 <pre><code class="language-haskell">List a = Empty | Elem a (List a)
 </code></pre>
 <p>意思是，一个链表 <code>List</code> 要么是空表 <code>Empty</code>，要么持有一个元素 <code>Elem</code>，同时后面跟着下一个链表 <code>List</code>。这是一种递归定义的<strong>和类型</strong>（<em>sum type</em>），即「可以具有不同类型的值的类型」。在 Rust 中，和类型被称作枚举类型 <code>enum</code>。如果你曾是 C-like 语言的程序员，应该会很熟悉这个名字。下面我们用 Rust 写出这个函数式版的定义：</p>
 <p>文件名：src/first.rs</p>
-<pre><code class="language-rust ignore">// pub 能让别人可以在模块外调用 List 类型
+<pre><code class="language-rust ignore">// pub 能允许别人在模块外调用 List 类型
 pub enum List {
     Empty,
     Elem(i32, List),
@@ -302,7 +320,7 @@ error[E0072]: recursive type `first::List` has infinite size
  `first::List` representable
 </code></pre>
 <p>呃，我不知道你怎么想，反正我觉得我被函数式社区给坑了。</p>
-<p>如果仔细读一下出错信息，其实可以发现 rustc 编译器已经告诉了我们解决之道。</p>
+<p>如果仔细读一下出错信息，其实就能发现 rustc 编译器已经告诉了我们解决之道。</p>
 <blockquote>
 <p>提示：在某处添加间接修饰符，比如：<code>Box</code>，<code>Rc</code>，<code>&amp;</code>，可以让类型 <code>first::List</code> 成立。</p>
 </blockquote>
@@ -338,7 +356,7 @@ let boxed: Box&lt;u8&gt; = Box::new(val);
 let val: u8 = *boxed;
 </code></pre>
 <p>构造递归定义的数据结构：</p>
-<pre><pre class="playpen"><code class="language-rust">#[derive(Debug)]
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
 enum List&lt;T&gt; {
     Cons(T, Box&lt;List&lt;T&gt;&gt;),
     Nil,
@@ -352,11 +370,11 @@ fn main() {
 </code></pre></pre>
 <p>程序会输出 <code>Cons(1, Cons(2, Nil))</code>。</p>
 <p>递归类型必须被装箱，不然如果像下面这样定义 <code>Cons</code>：</p>
-<pre><code class="language-rust ignore"># enum List&lt;T&gt; {
-    Cons(T, List&lt;T&gt;),
-#     Nil,
-# }
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">enum List&lt;T&gt; {
+</span>    Cons(T, List&lt;T&gt;),
+<span class="boring">    Nil,
+</span><span class="boring">}
+</span></code></pre>
 <p>就会出错。因为 <code>List</code> 类型的大小依赖于内部元素的大小，但我们无法得知要给 <code>Cons</code> 分配多大内存。通过引入确定大小的 <code>Box&lt;T&gt;</code>，解决了 <code>Cons</code> 大小不定的问题。</p>
 </blockquote>
 <p>哇！这可能是我见过最有帮助的文档了。开篇第一个内容就恰好是我们正尝试在写的程序，包括它可能错误的原因以及修正错误的办法。</p>
@@ -382,7 +400,7 @@ fn main() {
 <li>我们给一个没有存储数据信息的结点分配了空间。</li>
 <li>其中一个结点却没有被分配空间。</li>
 </ul>
-<p>乍一看，这两个问题好像相互抵消了。尽管多用了一个结点，第一个结点却没必要在堆上分配。再看看另一种可能的布局：</p>
+<p>乍一看，这两个问题好像相互抵消了——尽管多用了一个结点，第一个结点却没必要在堆上分配。我们再看看另一种可能的布局：</p>
 <pre><code class="language-text">[指针] -&gt; (Elem A, 指针) -&gt; (Elem B, 空指针)
 </code></pre>
 <p>这种布局中，所有结点无一例外都在堆上分配。与第一种布局相比，最关键的区别在于没有了<strong>垃圾数据</strong>（<em>junk</em>）。这是什么东西？要理解它，首先得知道枚举类型在内存中是怎么样被安排的。</p>
@@ -393,7 +411,7 @@ fn main() {
     Dn(Tn),
 }
 </code></pre>
-<p><code>Foo</code> 类型的变量需要用一些整数来指示它是该枚举类型中的哪一种<strong>变体</strong>（<em>variant</em>），诸如 <code>D1</code>、<code>D2</code>、… <code>Dn</code>。这样的整数称作枚举类型的<strong>标志</strong>（<em>tag</em>）。同时它需要足够的空间来存储 <code>T1</code>、<code>T2</code>、… <code>Tn</code> 中最大的类型（可能要额外的空间以满足内存对齐的要求）。</p>
+<p><code>Foo</code> 类型的变量需要用一些整数来指示它是该枚举类型中的哪一种<strong>变体</strong>（<em>variant</em>），诸如 <code>D1</code>、<code>D2</code>、… <code>Dn</code>。这样的整数称作枚举类型的<strong>标志</strong>（<em>tag</em>）。同时它需要足够的空间来存储 <code>T1</code>、<code>T2</code>、… <code>Tn</code> 中最大的类型（可能需要额外的空间来满足内存对齐的要求）。</p>
 <p>这就造成了很大的缺陷：<code>Empty</code> 变体只含有一位的信息，却占用了一个元素加一个指针的空间，因为它随时可能转变为 <code>Elem</code> 变体。所以说在第一种布局中，多分配的那个结点包含的全是垃圾数据，会占用更多空间。</p>
 <p>对于第二点，可能会令人惊讶：不分配第一个结点劣于总是在堆上分配结点。这是因为前者会造成<strong>内存布局不一致</strong>的问题。在压入、弹出操作中，影响不大，但如果要拆分、合并链表，就大不一样了。</p>
 <p>考虑在两种内存布局中，各自执行拆分操作：</p>
@@ -466,7 +484,7 @@ error[E0446]: private type `first::Node` in public interface
   |          ^^^^^^^^^ can't leak private type
 </code></pre>
 <p>🙁</p>
-<p>Rust 又对我们发怒了。为了别人能使用 <code>List</code>，我们将其访问权限设置为公有 <code>pub</code>，但 <code>Node</code> 不是这样。问题在于公有枚举体的所有内部变体也都是公有的，而私有类型不能出现在公有的地方。理论上我们可以也把 <code>Node</code> 设为公有类型，但这不符合 Rust 编程风格，我们应该将实现细节隐藏起来。为达成这一点，我们可以将 <code>List</code> 设成结构体：</p>
+<p>Rust 又对我们发怒了。为了让别人能使用 <code>List</code>，我们将其访问权限设置为公有 <code>pub</code>，但 <code>Node</code> 不是这样。问题在于公有枚举体的所有内部变体也都是公有的，而私有类型不能出现在公有的地方。理论上我们可以也把 <code>Node</code> 设为公有类型，但这不符合 Rust 编程风格，我们应该将实现细节隐藏起来。为达成这一点，我们可以将 <code>List</code> 设成结构体：</p>
 <pre><code class="language-rust ignore">pub struct List {
     head: Link,
 }
@@ -516,13 +534,13 @@ warning: field is never used: `next`
 12 |     next: Link,
    |
 </code></pre>
-<p>终于编译过了！不过 Rust 依旧很生气，它说我们所写的代码都是无用功。这是因为 <code>head</code> 从来没有被我们用到过，而作为私有字段，它也不能被别人访问。同理，<code>Link</code> 与 <code>Node</code> 中的代码也是毫无用处的。要解决这一问题，就得为我们的 <code>List</code> 实现相关功能。</p>
+<p>终于编译过了！不过 Rust 依旧很生气，它认为我们所写的代码都是无用的。这是因为 <code>head</code> 从来没有被用到过。同时，作为私有字段，它也不能从外部被访问。同理，与<code>Link</code> 以及 <code>Node</code> 相关代码也是毫无用处的。要解决这一问题，就得为我们的 <code>List</code> 添加实现具体功能的代码。</p>
 <h1><a class="header" href="#new-方法" id="new-方法">New 方法</a></h1>
 <blockquote>
 <p>原文链接：<a href="https://github.com/rust-unofficial/too-many-lists/blob/master/src/first-new.md">first-new.md</a> <br>
 翻译基准：<a href="https://github.com/rust-unofficial/too-many-lists/blob/b57202a5e01b50e4217b85af3d89f49f612dcbae/src/first-new.md">commit b57202a</a></p>
 </blockquote>
-<p>为了将代码与类型关联起来，我们需要用 <code>impl</code> 块。</p>
+<p>为了将代码与类型关联起来，我们需要使用 <code>impl</code> 块。</p>
 <pre><code class="language-rust ignore">impl List {
     // TODO: 实现相关功能的代码
 }
@@ -542,16 +560,16 @@ warning: field is never used: `next`
 <p>有几个要点：</p>
 <ul>
 <li>
-<p><code>Self</code> 指代 <code>impl</code> 后面跟的那个类型。这样就避免重复了。</p>
+<p>可以用 <code>Self</code> 指代 <code>impl</code> 块所实现的类型。这样能避免不必要的重复。</p>
 </li>
 <li>
-<p>我们构造结构体实例的方式几乎与声明它的方式一样。唯一的不同点在于跟在字段后边的不是类型，而是初始化它们所用的值。</p>
+<p>创建结构体实例的方式基本类似于声明结构体。唯一的区别在于：跟在字段后边的不是类型，而是它们的初始值。</p>
 </li>
 <li>
-<p>我们用作用域符 <code>::</code> 来表示枚举类型的某个变体。</p>
+<p>用作用域符 <code>::</code> 来表示枚举类型的某个变体。</p>
 </li>
 <li>
-<p>函数中的最后一个表达式会隐式地被返回。这样做可以使代码更整洁。同时与其他 C-like 语言一样，你仍然可以用 <code>return</code> 语句来提早返回。</p>
+<p>函数中的最后一个表达式会隐式地被返回。这样做可以使代码更整洁。此外，你依旧可以用 <code>return</code> 语句来提早跳出函数。这与其他 C-like 语言是一样的。</p>
 </li>
 </ul>
 <h1><a class="header" href="#所有权初探" id="所有权初探">所有权初探</a></h1>
@@ -559,17 +577,115 @@ warning: field is never used: `next`
 <p>原文链接：<a href="https://github.com/rust-unofficial/too-many-lists/blob/master/src/first-ownership.md">first-ownership.md</a> <br>
 翻译基准：<a href="https://github.com/rust-unofficial/too-many-lists/blob/b57202a5e01b50e4217b85af3d89f49f612dcbae/src/first-ownership.md">commit b57202a</a></p>
 </blockquote>
-<p>现在可以开始构造我们的链表了。我们将使用普通的（非静态的）方法来与它打交道。在 Rust 中，方法就是一类特殊的函数。它们拥有无须指明类型的 <code>self</code> 参数。</p>
+<p>现在可以开始构造我们的链表了。我们将使用普通而非静态的方法来与它打交道。在 Rust 中，方法就是一类特殊的函数。它们拥有无须指明类型的 <code>self</code> 参数。</p>
 <pre><code class="language-rust ignore">fn foo(self, arg2: Type2) -&gt; ReturnType {
     // 函数体
 }
 </code></pre>
 <p><code>self</code> 参数主要有三种形式：<code>self</code>、<code>&amp;mut self</code>、<code>&amp;self</code>。它们分别代表了 Rust 中主要的三种所有权：</p>
 <ul>
-<li><code>self</code> ——值</li>
-<li><code>&amp;mut self</code> ——可变引用</li>
-<li><code>&amp;self</code> ——共享引用</li>
+<li><code>self</code> ——值（value）</li>
+<li><code>&amp;mut self</code> ——可变引用（mutable reference）</li>
+<li><code>&amp;self</code> ——共享引用（shared reference）</li>
 </ul>
+<p>值意味着<strong>真正的</strong>所有权。你可以对它做任何事情：移动它、销毁它、改变它，或者以引用的方式借出它。当你按值传递对象时，它会被<strong>移动</strong>到新的变量。即新变量拥有了对象的所有权，而原变量就无法访问它了。基于此，大部分方法都不会用 <code>self</code> 的形式——谁也不想使用这种会不翼而飞的链表<sup class="footnote-reference"><a href="#1">1</a></sup>。</p>
+<p>可变引用意味着对你不拥有的对象暂时有<strong>独占</strong>的访问权利。只要有了可变引用，那你就可以为所欲为了。当然你得保证使用完成之后，它仍处于合法状态（不然就太不尊重它的所有者了）。也就是说，你完全可以覆盖掉原来的内容。不过还是有一个特例：在<strong>替换</strong>（<em>swap</em>）变量中的内容时，如果没有让别的内容替换进去，则千万不能把 <code>&amp;mut</code> 中的内容移走。这一点我们之后会经常见到。总之，如果想让方法中的 <code>self</code> 是可变的，就可以用 <code>&amp;mut self</code> 的形式。</p>
+<p>共享引用意味着对你不拥有的对象暂时有<strong>共享</strong>的访问权利。由于访问权利是共享的，所以你基本上不能改变任何东西。打个比方，变量前面的 <code>&amp;</code> 就好像把它陈列在博物馆里一样。如果只想观察 <code>self</code> 中的内容，用 <code>&amp;</code> 形式的方法就可以。</p>
+<p>稍后我们会看到，在特定情况下，上述几个关于可变性的规则是可以被规避掉的。这也是共享引用不叫<strong>不可变引用</strong>的缘由。诚然，可变引用也可以称作<strong>独占引用</strong>，但我们会发现在 99% 的情况下，把所有权视作可变性都能提供正确的思路。</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>调用方法时，会经过把自身传给 <code>self</code> 形参的步骤。如果用了按值传递，那么就是移动语义。那么调用者就会失去原有内容的所有权，变成空壳。</p>
+</div>
+<h1><a class="header" href="#push-方法" id="push-方法">Push 方法</a></h1>
+<blockquote>
+<p>原文链接：<a href="https://github.com/rust-unofficial/too-many-lists/blob/master/src/first-push.md">first-push.md</a> <br>
+翻译基准：<a href="https://github.com/rust-unofficial/too-many-lists/blob/b57202a5e01b50e4217b85af3d89f49f612dcbae/src/first-push.md">commit b57202a</a></p>
+</blockquote>
+<p>下面开始写把数据压入链表的代码。由于 <code>push</code> 方法<strong>改变</strong>了链表，所以应该使用 <code>&amp;mut self</code> 形式的方法。我们还需要一个 <code>i32</code> 的整数作为要压入的数据。</p>
+<pre><code class="language-rust ignore">impl List {
+    pub fn push(&amp;mut self, elem: i32) {
+        // TODO
+    }
+}
+</code></pre>
+<p>首先，我们要创建一个存储数据的结点：</p>
+<pre><code class="language-rust ignore">impl List {
+    pub fn push(&amp;mut self, elem: i32) {
+        let new_node = Node {
+            elem: elem,
+            next: ?????
+        };
+    }
+}
+</code></pre>
+<p><code>next</code> 是什么呢？没错，就是原来的整个链表！那我们……可以这么做吗？</p>
+<pre><code class="language-rust ignore">impl List {
+    pub fn push(&amp;mut self, elem: i32) {
+        let new_node = Node {
+            elem: elem,
+            next: self.head,
+        }
+    };
+}
+</code></pre>
+<pre><code class="language-text">$ cargo build
+   Compiling lists v0.1.0
+error[E0507]: cannot move out of `self.head` which is behind a mutable reference
+  --&gt; src/first.rs:22:19
+   |
+22 |             next: self.head,
+   |                   ^^^^^^^^^ move occurs because `self.head` has type
+`first::Link`, which does not implement the `Copy` trait
+</code></pre>
+<p>不！Rust 确实输出了正确的信息，但问题的确切含义和解决方法仍旧云里雾里。</p>
+<blockquote>
+<p>【已翻译】</p>
+<p>error[E0507]: 不能移动 <code>self.head</code> 变量，因为它是可变引用。<sup class="footnote-reference"><a href="#1">1</a></sup></p>
+</blockquote>
+<p>我们试图将 <code>self.head</code> 字段赋给 <code>next</code>，但 Rust 并不同意。当 <code>self</code> 借用结束并「归还」给真正的所有者时，我们会发现 <code>self</code> 少了一部份。我们之前说过，这样粗鲁地使用 <code>&amp;mut</code> 是被文雅的 Rust 所禁止的。</p>
+<p>如果我们把移走的东西补充回来会怎样？具体来说，就用新节点来补充。</p>
+<pre><code class="language-rust ignore">pub fn push(&amp;mut self, elem: i32) {
+    let new_node = Box::new(Node {
+        elem: elem,
+        next: self.head,
+    });
+
+    self.head = Link::More(new_node);
+}
+</code></pre>
+<pre><code class="language-text">$ cargo build
+   Compiling lists v0.1.0
+error[E0507]: cannot move out of `self.head` which is behind a mutable reference
+  --&gt; src/first.rs:22:19
+   |
+22 |             next: self.head,
+   |                   ^^^^^^^^^ move occurs because `self.head` has type
+`first::Link`, which does not implement the `Copy` trait
+</code></pre>
+<p>又搞砸了。从原则上来讲，这下 Rust 应该能接受这种写法，但它没有。有许多原因导致 Rust 报错，最主要的是<a href="https://doc.rust-lang.org/nightly/nomicon/exception-safety.html">异常安全</a>。我们需要有一种方法能获取 <code>head</code>，同时不让 Rust 发现。我们向非著名 Rust 黑客 Indiana Jones 寻求建议：</p>
+<p><img src="https://s3.ax1x.com/2020/12/03/DTI7QA.gif" alt="Indy Prepares to mem::replace" /></p>
+<p>Indiana Jones 建议我们使用 <code>mem::replace</code>。这个函数能让我们偷走借来的值，并用另一个值取而代之。在文件开头引入 <code>std::mem</code>, 就能使 <code>mem</code> 存在于局部作用域中了：</p>
+<pre><code class="language-rust ignore">use std::mem;
+</code></pre>
+<p>并正确地使用：</p>
+<pre><code class="language-rust ignore">pub fn push(&amp;mut self, elem: i32) {
+    let new_node = Box::new(Node {
+        elem: elem,
+        next: mem::replace(&amp;mut self.head, Link::Empty),
+    });
+    self.head = Link::More(new_node);
+}
+</code></pre>
+<p>这里我们在将新链表头赋给 <code>self.head</code> 之前，暂时用<code>Link::Empty</code>来取代它。我没有开玩笑：这件事令人难受却又不得不做，至少现在没错。</p>
+<p>但我们已经搞定 <code>push</code> 操作了！应该说是大概搞定了，我们还得测试一下。现在看来最简单的方式是把 <code>pop</code> 方法写出来，然后验证是否能产生正确的结果。</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>由于译者使用了较新版本的 Rust，错误提示与原文不一致。但错误代码以及含义都是一样的。这里采用较新版本的错误提示。</p>
+</div>
+<h1><a class="header" href="#pop-方法" id="pop-方法">Pop 方法</a></h1>
+<blockquote>
+<p>原文链接：<a href="https://github.com/rust-unofficial/too-many-lists/blob/master/src/first-pop.md">first-pop.md</a> <br>
+翻译基准：<a href="https://github.com/rust-unofficial/too-many-lists/blob/4fa654c8e339037bfaa5b9f5aaeef9b478a0839d/src/first-pop.md">commit 4fa654c</a></p>
+</blockquote>
+<p>如同 <code>push</code> 一样，pop 也需要改变链表。</p>
 
                     </main>
 
@@ -594,6 +710,14 @@ warning: field is never used: `next`
 
         
 
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
         
 
         
